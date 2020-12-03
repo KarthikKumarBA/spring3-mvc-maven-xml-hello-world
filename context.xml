@@ -18,6 +18,3 @@
 <Context antiResourceLocking="false" privileged="true" >
   <Manager sessionAttributeValueClassNameFilter="java\.lang\.(?:Boolean|Integer|Long|Number|String)|org\.apache\.catalina\.filters\.CsrfPreventionFilter\$LruCache(?:\$1)?|java\.util\.(?:Linked)?HashMap"/>
 </Context>
-
-3. similarly replace tomcat users with below content & change the password based on the class.
-cd /opt/tomcat/conf/
