@@ -18,7 +18,7 @@ RUN wget https://downloads.apache.org/maven/maven-3/${Mvn_Version}/binaries/apac
 
 
 # Installing and configuring Tomcat
-ARG WORKSPACE
+ARG test
 ENV Tomcat_Version=9.0.56
 RUN     wget http://www-eu.apache.org/dist/tomcat/tomcat-9/v${Tomcat_Version}/bin/apache-tomcat-${Tomcat_Version}.tar.gz && \
         tar xvfz apache-tomcat-${Tomcat_Version}.tar.gz && \
@@ -27,5 +27,5 @@ RUN     wget http://www-eu.apache.org/dist/tomcat/tomcat-9/v${Tomcat_Version}/bi
         mv apache-tomcat-${Tomcat_Version}/* /opt/tomcat/.
 COPY context.xml /opt/tomcat/webapps/manager/META-INF/
 COPY tomcat-users.xml /opt/tomcat/conf/
-COPY WORKSPACE/target/**.war /opt/tomcat/webapps/app.war
+COPY test/target/**.war /opt/tomcat/webapps/app.war
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
