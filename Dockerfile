@@ -20,7 +20,7 @@ RUN wget https://downloads.apache.org/maven/maven-3/${Mvn_Version}/binaries/apac
 # Installing and configuring Tomcat
 
 ENV Tomcat_Version=9.0.56
-RUN     wget http://www-eu.apache.org/dist/tomcat/tomcat-8/v${Tomcat_Version}/bin/apache-tomcat-${Tomcat_Version}.tar.gz && \
+RUN     wget http://www-eu.apache.org/dist/tomcat/tomcat-9/v${Tomcat_Version}/bin/apache-tomcat-${Tomcat_Version}.tar.gz && \
         tar xvfz apache-tomcat-${Tomcat_Version}.tar.gz && \
         mkdir -p /opt/tomcat/ /opt/myapplication/ -p && \
         mv apache-tomcat-${Tomcat_Version}.tar.gz /tmp/ && \
