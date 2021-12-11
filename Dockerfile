@@ -27,4 +27,5 @@ RUN     wget http://www-eu.apache.org/dist/tomcat/tomcat-9/v${Tomcat_Version}/bi
         mv apache-tomcat-${Tomcat_Version}/* /opt/tomcat/.
 COPY context.xml /opt/tomcat/webapps/manager/META-INF/
 COPY tomcat-users.xml /opt/tomcat/conf/
+COPY ${WORKSPACE}/target/**war /opt/tomcat/webapps/app.war
 CMD ["/opt/tomcat/bin/catalina.sh", "run"]
