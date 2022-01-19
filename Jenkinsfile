@@ -48,9 +48,7 @@ pipeline {
                 steps{
                     sh "terraform init"
                     sh "YES | terraform apply"
-                    withCredentials([<object of type com.cloudbees.jenkins.plugins.awscredentials.AmazonWebServicesCredentialsBinding>]) {
                     sh"aws ecs update-service --cluster main --service test-http --task-definition test-http --force-new-deployment"
-                }
                 }
             }
     }
