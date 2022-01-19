@@ -13,7 +13,7 @@ resource "aws_ecs_task_definition" "test-http" {
       portMappings = [
         {
           containerPort = 80
-          hostPort      = 80
+          hostPort      = 8080
         }
       ]
     }
