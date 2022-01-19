@@ -46,6 +46,7 @@ pipeline {
             }
       stage("ecs deploy"){
                 steps{
+                    sh"sed 's|bakarthi/myapp:v1.0.${BUILD_NUMBER}|bakarthi/myapp:v1.0.${BUILD_NUMBER}|/g'
                     sh "terraform init"
                     sh "terraform apply -auto-approve"
                     sh"aws ecs update-service --cluster main --service test-http --task-definition test-http --force-new-deployment"
