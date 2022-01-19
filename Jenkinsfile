@@ -46,7 +46,9 @@ pipeline {
             }
       stage("ecs deploy"){
                 steps{
-                    sh "docker tag myapp bakarthi/myapp:v1.0.${BUILD_NUMBER}"
+                    sh "terraform init"
+                    sh "YES | terraform apply"
+                    sh"aws ecs update-service --cluster main --service test-http --task-definition test-http --force-new-deployment"
                 }
             }
     }
