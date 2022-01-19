@@ -47,7 +47,7 @@ pipeline {
       stage("ecs deploy"){
                 steps{
                     sh "terraform init"
-                    sh "YES | terraform apply"
+                    sh "terraform apply -auto-approve"
                     sh"aws ecs update-service --cluster main --service test-http --task-definition test-http --force-new-deployment"
                 }
             }
