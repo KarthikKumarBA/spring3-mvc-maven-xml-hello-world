@@ -8,7 +8,7 @@ resource "aws_ecs_task_definition" "test-http" {
   container_definitions = jsonencode([
     {
       name      = "test-http"
-      image     = "bakarthi/myapp:v1.0.${BUILD_NUMBER}"
+      image     = "bakarthi/myapp:v1.0.1"
       cpu       = 10
       memory    = 512
       essential = true
