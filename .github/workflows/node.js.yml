@@ -24,4 +24,6 @@ jobs:
     - name: commands
       run: |
         ls -l
+        ls -l react-login
+        ls -l react-login/backend
       
