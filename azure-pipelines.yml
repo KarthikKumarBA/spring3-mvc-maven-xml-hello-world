@@ -6,6 +6,7 @@
 trigger:
 - master
 
+
 pool:
   vmImage: ubuntu-latest
 
@@ -22,7 +23,7 @@ steps:
     goals: 'package'
 - task: Docker@2
   inputs:
-    Dockerfile: 'Dockerfile'
-    container: test
-    tags: v1
-    repository: hub.docker.com
+    containerRegistry: 'docker'
+    repository: 'azure'
+    command: 'build'
+    Dockerfile: '**/Dockerfile'
